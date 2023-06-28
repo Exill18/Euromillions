@@ -91,7 +91,7 @@ def check_numbers(user_numbers, user_star_numbers, winning_numbers, star_numbers
         prize_probability = 1 / 17
 
     # Display the results
-    messagebox.showinfo("Lottery Results", f"You matched {user_winning_numbers_count} winning numbers and {user_star_numbers_count} star numbers.\nYou won {prize} euros.")
+    messagebox.showinfo("EUROMILLIONS Results", f"You matched {user_winning_numbers_count} winning numbers and {user_star_numbers_count} star numbers.\nYou won {prize} euros.")
 
 def generate_random_numbers():
     winning_numbers = random.sample(range(1, 51), 5)
@@ -102,10 +102,11 @@ def generate_random_numbers():
 def main():
     # Create the GUI
     window = tk.Tk()
-    window.title("Lottery Program")
+    window.title("EUROMILLIONS")
+    
 
     # Create and configure labels
-    label1 = tk.Label(window, text="Click the buttons to select 5 numbers between 1 and 50:")
+    label1 = tk.Label(window, text="Click the buttons to select 5 unique numbers between 1 and 50:")
     label1.pack()
 
     # Create and configure number buttons
@@ -124,7 +125,7 @@ def main():
             number_frame = tk.Frame(window)
             number_frame.pack()
 
-    label2 = tk.Label(window, text="Click the buttons to select 2 star numbers between 1 and 12:")
+    label2 = tk.Label(window, text="Click the buttons to select 2 unique star numbers between 1 and 12:")
     label2.pack()
 
     # Create and configure star number buttons
