@@ -1,12 +1,8 @@
-# Create a program to simulate the game of EuroMillions. The user is the player and the computer generates the winning numbers. The computer must also calculate the probability of the user winning the jackpot. The regular rules for the EuroMillions apply. 
-
-# Import the random module
 import random
 
-# Define the main function
 def main():
 
-    # Define the variables
+    # variables
     user_numbers = []
     winning_numbers = []
     star_numbers = []
@@ -21,20 +17,19 @@ def main():
     user_winning_numbers_count = 0
     user_star_numbers_count = 0
     
-
-    # Generate the winning numbers
+    # Winning numbers
     for i in range(5):
         winning_numbers.append(random.randint(1,50))
     for i in range(2):
         star_numbers.append(random.randint(1,12))
 
-    # Get the user numbers
+    # Your numbers
     for i in range(5):
         user_numbers.append(int(input("Enter a number between 1 and 50: ")))
     for i in range(2):
         user_star_numbers.append(int(input("Enter a star number between 1 and 12: ")))
 
-    # Check if the user numbers are valid
+    # valid numbers checker
     for i in range(5):
         while user_numbers[i] < 1 or user_numbers[i] > 50:
             user_numbers[i] = int(input("Enter a number between 1 and 50: "))
@@ -42,7 +37,7 @@ def main():
         while user_star_numbers[i] < 1 or user_star_numbers[i] > 12:
             user_star_numbers[i] = int(input("Enter a star number between 1 and 12: "))
 
-    # Check if the user numbers are unique
+    # unique numbers checker
     for i in range(5):
         while user_numbers[i] in user_numbers[i+1:]:
             user_numbers[i] = int(input("Enter a unique number between 1 and 50: "))
@@ -50,7 +45,7 @@ def main():
         while user_star_numbers[i] in user_star_numbers[i+1:]:
             user_star_numbers[i] = int(input("Enter a unique star number between 1 and 12: "))
 
-    # Check if the user numbers match the winning numbers
+    # winning numbers checker
     for i in range(5):
         if user_numbers[i] in winning_numbers:
             winning_numbers_count += 1
@@ -58,7 +53,7 @@ def main():
         if user_star_numbers[i] in star_numbers:
             star_numbers_count += 1
 
-    # Calculate the prize
+    # prize and probability, can be improved but cant be bothered
     if winning_numbers_count == 5 and star_numbers_count == 2:
         jackpot = 100000000
         jackpot_probability = 1/139838160
@@ -103,7 +98,7 @@ def main():
         prize_probability = 1/17
 
 
-    # Check if the user numbers match the winning numbers
+    # your numbers are winning numbers checker
     for i in range(5):
         if user_numbers[i] in winning_numbers:
             user_winning_numbers_count += 1
@@ -111,7 +106,7 @@ def main():
         if user_star_numbers[i] in star_numbers:
             user_star_numbers_count += 1
 
-    # Print the results
+    # give you the bad news, you most likely lost again
     print("The winning numbers are: ", winning_numbers)
     print("The star numbers are: ", star_numbers)
     print("Your numbers are: ", user_numbers)
@@ -120,9 +115,9 @@ def main():
     print("You won ", prize, " euros.")
     print("The probability of winning the jackpot is ", jackpot_probability, " and the probability of winning a prize is ", prize_probability, ".")
 
-# Call the main function
+# pretty obvious
 main()
 
-# End of program
+# also pretty obvious, it just makes the End of the program look nicer
 print("End of program.")
 
