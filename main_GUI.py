@@ -99,11 +99,26 @@ def generate_random_numbers():
     
     return winning_numbers, star_numbers
 
+def display_creator_info():
+    creator_info = "This code was created by Exill18"
+    messagebox.showinfo("Code Creator", creator_info)
+
+def display_github_info():
+    # Open the link to the github page 
+    github_info = "https://github.com/Exill18"
+    messagebox.showinfo("Github", github_info)
+
+    
+
 def main():
     # Create the GUI
     window = tk.Tk()
     window.title("EUROMILLIONS")
-    
+    creator_button = tk.Button(window, text="Creator", command=display_creator_info)
+    creator_button.place(x=300, y=330)
+    github_button = tk.Button(window, text="Github", command=display_github_info)
+    github_button.place(x=240, y=330)
+
 
     # Create and configure labels
     label1 = tk.Label(window, text="Click the buttons to select 5 unique numbers between 1 and 50:")
